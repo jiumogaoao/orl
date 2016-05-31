@@ -67,9 +67,9 @@ return true
 var bannerclock=0;
 function bannerRun(){
 	bannerclock=bannerclock%3;
-	$(".browser #banner #roll").css("left",-(bannerclock*100)+"%");
-	$(".browser #banner .whitePoint").removeClass("hl");
-	$(".browser #banner .whitePoint").eq(bannerclock).addClass("hl");
+	$("#banner #roll").css("left",-(bannerclock*100)+"%");
+	$("#banner .whitePoint").removeClass("hl");
+	$("#banner .whitePoint").eq(bannerclock).addClass("hl");
 	}
 	bannerRun();
 var bannerdelay=setInterval(function(){

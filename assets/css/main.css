@@ -41,7 +41,7 @@ body {
   position: relative; 
   -webkit-transform-origin: top left;
   transform-origin: top left;
-  background-color: #fff;
+  background-color: #e3e6e8;
 }
 body.browser{
 	width:100%;
@@ -49,12 +49,13 @@ body.browser{
 	}
 body.phone{
 	width:750px;}
-.browser .pH,.phone .bH{
+.phone .pH,.browser .bH{
 	display:none;
 	}
 .browser .centerFrame{
 	width:1200px;
 	margin:auto;
+	position:relative;
 	}
 .browser .pathTitle{
 	position:relative;
@@ -79,6 +80,35 @@ body.phone{
 	position:absolute;
 	top:60px;
 	right:450px;
+	color:#5ebcff;}
+.phone .centerFrame{
+	width:750px;
+	margin:auto;
+	position:relative;
+	}
+.phone .pathTitle{
+	position:relative;
+	padding-top:38px;}
+.phone .pathTitle .titleCn{
+	text-align:center;
+	font-size:34px;
+	color:#342d14;
+	letter-spacing: 20px;
+    text-indent: 20px;
+	}
+.phone .pathTitle .titleEn{
+	text-align:center;
+	font-size:28px;
+	color:#c5c4bf;}
+.phone .pathTitle .left{
+	position:absolute;
+	top:54px;
+	left:150px;
+	color:#5ebcff;}
+.phone .pathTitle .right{
+	position:absolute;
+	top:54px;
+	right:150px;
 	color:#5ebcff;}
 /*head*/
 .browser #head{
@@ -121,6 +151,32 @@ body.phone{
 	border-right:0px;}
 .browser #head button:hover,.browser #head button.hl{
 	color:#1c8de5;}
+.phone #head{
+	width:100%;
+	height:132px;
+	box-shadow:0px 0px 50px rgba(0,0,0,0.3);
+	background-color:#fff;
+	z-index:4;
+	position:relative;
+	}
+.phone #head #logo{
+	position:absolute;
+	top:40px;
+	left:222px;}
+.phone #head #title{
+	position:absolute;
+	top:49px;
+	left:300px;
+	color:#78acf1;
+	font-size:34px;
+	}
+.phone #head #menuButton{
+	position:absolute;
+	top:50px;
+	left:573px;
+	color:#78acf1;
+	font-size:34px;
+	}
 /*banner*/
 .browser #banner{
 	width:100%;
@@ -215,6 +271,103 @@ body.phone{
     text-indent: 0px;
     text-align: center;
 	}
+.phone #banner{
+	width:100%;
+	height:372px;
+	position:relative;
+	overflow:hidden;}
+.phone #banner #roll{
+	width:300%;
+	height:372px;
+	position:absolute;
+	top:0px;
+	left:-200%;
+	transition-timing-function: "cubic-bezier(0.1, 0.57, 0.1, 1)";
+  transition-duration: 1000ms;}
+.phone #banner .point{
+	float:left;
+	width:33.33%;
+	height:372px;
+	background-position:center;
+	background-repeat:no-repeat;
+	background-size:auto 372px;}
+.phone #banner .pointCenter{
+	width:1200px;
+	margin:auto;
+	position:relative;}
+.phone #banner .whitePoint{
+	width:10px;
+	height:10px;
+	background-color:#fff;
+	opacity:0.3;
+	float:left;
+	margin-right:25px;
+	border-radius:10px;}
+.phone #banner .whitePoint.hl{
+	opacity:1;}
+.phone #banner .whitePoint.last{
+	margin-right:0px;
+	}
+.phone #banner #whiteCenterFrame{
+	margin:auto;
+	position:relative;
+	top:330px;
+	width:80px;}
+.phone #banner #downApp{
+	width:163px;
+	height:36px;
+	background-color:#ffd550;
+	border-radius:44px;
+	text-align:center;
+	line-height: 36px;
+	color:#4f3f0b;
+	font-size:20px;
+	position:absolute;
+	top: 227px;
+    left: 85px;
+	font-weight:bold;
+	cursor:pointer;
+	}
+.phone #banner #downApp:hover{
+	color:#fff;
+	}
+.phone #banner #erCode{
+	position:absolute;
+	top: 120px;
+    left: 359px;
+	width: 97px;
+	height: 97px;}
+.phone #banner #go{
+	width: 161px;
+    height: 35px;
+    background-color: #fff;
+    border-radius: 44px;
+    line-height: 35px;
+    color: #dc9847;
+    font-size: 18px;
+    position: absolute;
+    top: 192px;
+    left: 498px;
+    cursor: pointer;
+    text-align: left;
+    text-indent: 12px;
+	}
+.phone #banner #go:hover{
+	color:red;}
+.phone #banner .icon{
+	position: absolute;
+    font-size: 15px;
+    width: 30px;
+    height: 30px;
+    border: 1px solid #dc9847;
+    border-radius: 34px;
+    top: 3px;
+    left: 123px;
+    line-height: 27px;
+    text-indent: 0px;
+    text-align: center;
+	}
+/*project*/
 .browser #project{
 	width:100%;
 	height:631px;
@@ -263,6 +416,55 @@ body.phone{
 	cursor:pointer;}
 .browser #project .dsc:hover{
 	color:red;}
+.phone #project{
+	width:100%;
+	background-color:#fff}
+.phone #project #projectFrame{
+	width:100%;
+}
+.phone #project .centerFrame{
+	padding-bottom:20px;}
+.phone #project .point{
+	width:100%;
+	margin-top:45px;
+	text-align:center;
+	position:relative;}
+.phone #project .cn{
+	font-size:34px;
+	color:#333333;
+	margin-top:17px;}
+.phone #project .en{
+	font-size:28px;
+	color:#c5c4bf;
+	margin-top:9px;}
+.phone #project .bg{
+	color: #eef7fc;
+    font-size: 355px;
+    text-indent: -18px;
+    line-height: 280px;
+    margin-top: -23px;}
+.phone #project .icon{
+	width: 175px;
+    height: 175px;
+    line-height: 159px;
+    position: absolute;
+    top: 74px;
+    left: 294px;
+    border: 3px solid #74c5e6;
+    border-radius: 104px;
+    background-color: #fff;
+	}
+.phone #project .icon .iconfont{
+	font-size: 120px;
+    color: #5ebcff;}
+.phone #project .dsc{
+	font-size:34px;
+	color:#5ebcff;
+	padding-top:75px;
+	cursor:pointer;
+}
+.phone #project .dsc:hover{
+	color:red;}
 /*analysis*/
 .browser #analysis{
 	width:100%;
@@ -271,4 +473,284 @@ body.phone{
 	background-image:url(../images/bgG.jpg);
 	background-position:center;
 	background-repeat:no-repeat;
+	}
+.browser #analysis .pathTitle .iconfont{
+	color:#45b170;}
+.browser #analysis .pathTitle .titleEn{
+	color:#fff;
+	}
+.browser #analysis #phoneA{
+	position:absolute;
+	top:185px;
+	left:180px;
+	z-index:3;}
+.browser #analysis #phoneB{
+	position:absolute;
+	top:115px;
+	left:70px;
+	z-index:2;}
+.browser #analysis #phoneC{
+	position:absolute;
+	top:185px;
+	left:390px;
+	z-index:1;}
+.browser #analysis #dsc{
+	width: 366px;
+    background-color: #e6f9ef;
+    border: 3px solid #fff;
+    padding: 30px 45px;
+    font-size: 16px;
+    line-height: 32px;
+    text-indent: 32px;
+	}
+.browser #analysis #dscFrame{
+	padding:50px 44px;
+	background-color:#d8f6e5;
+	position:absolute;
+	top:226px;
+	left:658px;}
+.phone #analysis{
+	width:100%;
+	height:426px;
+	background-color:#cef4dd;
+	background-image:url(../images/bgG.jpg);
+	background-position:center;
+	background-repeat:no-repeat;
+	background-size:auto 426px;
+	}
+.phone #analysis .pathTitle .iconfont{
+	color:#45b170;}
+.phone #analysis .pathTitle .titleEn{
+	color:#fff;
+	}
+.phone #analysis #phoneA{
+	width:166px;
+	position:absolute;
+	top:133px;
+	left:114px;
+	z-index:3;}
+.phone #analysis #phoneB{
+	width:146px;
+	position:absolute;
+	top:92px;
+	left:45px;
+	z-index:2;}
+.phone #analysis #phoneC{
+	width:146px;
+	position:absolute;
+	top: 136px;
+    left: 218px;
+	z-index:1;}
+.phone #analysis #dsc{
+	    width: 253px;
+    background-color: #e6f9ef;
+    border: 3px solid #fff;
+    padding: 10px 20px;
+    font-size: 12px;
+    line-height: 32px;
+    text-indent: 32px;
+	}
+.phone #analysis #dscFrame{
+	padding:29px 33px;
+	background-color:#d8f6e5;
+	position:absolute;
+	top:144px;
+	left:424px;}
+/*team*/
+.browser #team{
+	width:100%;
+	height:570px;
+	background-image:url(../images/bgT.jpg);
+	background-color:#fefefe;
+	background-position:center;
+	background-repeat:no-repeat;
+	}
+.browser #team #dsc{
+	width:393px;
+	font-size: 16px;
+    line-height: 32px;
+    text-indent: 32px;
+	position:absolute;
+	top:179px;
+	left:58px;}
+.browser #team #pic{
+	position:absolute;
+	top:158px;
+	left:564px;
+	}
+.phone #team{
+	width:100%;
+	height:861px;
+	background-image:url(../images/bgT.jpg);
+	background-color:#fefefe;
+	background-position:center;
+	background-repeat:no-repeat;
+	background-size:auto 861px;
+	}
+.phone #team #dsc{
+	    width: 449px;
+    font-size: 28px;
+    line-height: 49px;
+    text-indent: 54px;
+    position: absolute;
+    top: 140px;
+    left: 160px;
+    letter-spacing: 4px;}
+.phone #team #pic{
+	position:absolute;
+	top:446px;
+	left:89px;
+	}
+/*foot*/
+.browser #foot{
+	width:100%;
+	height:332px;
+	background-color:#f4f7f6;
+	margin-top:20px;
+	border-top:1px solid #fff;}
+.browser #foot #first{
+	float:left;
+	width:664px;
+	height:226px;
+	border-right:1px solid #e4e8e8;
+	margin-top:21px;}
+.browser #foot #second{
+	float:left;
+	width:312px;
+	height:226px;
+	border-right:1px solid #e4e8e8;
+	margin-top:21px;
+	}
+.browser #foot #third{
+	float:left;
+	width:224px;
+	height:226px;
+	margin-top:21px;
+	}
+.browser #foot #first .point{
+	width:25%;
+	float:left;
+	text-align:center;}
+.browser #foot #first .icon{
+	width:50px;
+	height:50px;
+	border:2px solid #dddddf;
+	border-radius:50px;
+	margin:auto;}
+.browser #foot #first .iconfont{
+	line-height:46px;
+	color:#c2cfe2;
+	font-size:30px;}
+.browser #foot #first .name{
+	font-size:16px;
+	color:#838181;
+	margin-top:12px;
+	margin-bottom:20px;
+	}
+.browser #foot #first li{
+	font-size:14px;
+	color:#b0b0b0;
+	margin-bottom:14px;
+	cursor:pointer;}
+.browser #foot #first li:hover{
+	text-decoration:underline;}
+.browser #foot #second #icon{
+	display:block;
+	margin:auto;
+	}
+.browser #foot #second #name{
+	text-align:center;
+	font-size:22px;
+	color:#c2cfe2;
+	margin-top:10px;
+	}
+.browser #foot #second .icon{
+	width:34px;
+	height:34px;
+	border-radius:34px;
+	border:1px solid #b3aeae;
+	color:#b3aeae;
+	text-align:center;
+	float:left;
+	margin-left:37px;
+	}
+.browser #foot #second .point{
+	margin-top:15px;}
+.browser #foot #second .iconfont{
+	line-height:30px;
+	}
+.browser #foot #second .test{
+	float:left;
+	margin-left:10px;
+	color:#b3aeae;
+	font-family:Arial;
+	font-size: 20px;
+    line-height: 34px;
+	}
+.browser #foot #third .point{
+	height:130px;
+	width:110px;
+	background-color:#ececec;
+	margin-left:60px;
+	margin-bottom:16px;
+	}
+.browser #foot #third .space{
+	width:100%;
+	height:4px;}
+.browser #foot #third .icon{
+	border:3px solid #fff;
+	margin:auto;
+	}
+.browser #foot #third .name{
+	text-align:center;
+	font-size:12px;
+	margin-top:9px;}
+.phone #foot{
+	width:100%;
+	height:518px;
+	background-color:#f4f7f6;
+	margin-top:20px;
+	border-top:1px solid #fff;}
+.phone #foot #second{
+	width:100%;
+	height:226px;
+	}
+.phone #foot #second #icon{
+	width:114px;
+	display:block;
+	margin:auto;
+	padding-top:59px;
+	}
+.phone #foot #second #name{
+	text-align:center;
+	font-size:34px;
+	color:#c2cfe2;
+	margin-top:10px;
+	}
+.phone #foot #second .icon{
+	width:63px;
+	height:63px;
+	border-radius:34px;
+	border:1px solid #b3aeae;
+	color:#b3aeae;
+	text-align:center;
+	float:left;
+	margin-left:211px;
+	}
+.phone #foot #second .point2 .icon{
+	margin-left:164px;
+	}
+.phone #foot #second .point{
+	margin-top:45px;}
+.phone #foot #second .iconfont{
+	font-size:30px;
+	line-height:60px;
+	}
+.phone #foot #second .test{
+	float:left;
+	margin-left:10px;
+	color:#b3aeae;
+	font-family:Arial;
+	font-size: 28px;
+    line-height: 60px;
 	}
