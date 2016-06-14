@@ -11,29 +11,30 @@
   background-color: transparent;
   background-image: none;
   -webkit-appearance: none; 
-  font-family:"Microsoft YaHei";}
+  font-family:"Microsoft YaHei",\5FAE\8F6F\96C5\9ED1,'SimHei',\9ED1\4F53,'LiHei Pro Medium', 'HanHei SC', 'STHeiti';}
 input::-webkit-input-placeholder, textarea::-webkit-input-placeholder { 
 color: #8ea7c8; 
-font-family:"Microsoft YaHei";
+font-family:"Microsoft YaHei",\5FAE\8F6F\96C5\9ED1,'SimHei',\9ED1\4F53,'LiHei Pro Medium', 'HanHei SC', 'STHeiti';
 } 
 input:-moz-placeholder, textarea:-moz-placeholder { 
 color: #8ea7c8; 
-font-family:"Microsoft YaHei";
+font-family:"Microsoft YaHei",\5FAE\8F6F\96C5\9ED1,'SimHei',\9ED1\4F53,'LiHei Pro Medium', 'HanHei SC', 'STHeiti';
 } 
 input::-moz-placeholder, textarea::-moz-placeholder { 
 color: #8ea7c8; 
-font-family:"Microsoft YaHei";
+font-family:"Microsoft YaHei",\5FAE\8F6F\96C5\9ED1,'SimHei',\9ED1\4F53,'LiHei Pro Medium', 'HanHei SC', 'STHeiti';
 } 
 input:-ms-input-placeholder, textarea:-ms-input-placeholder { 
 color: #8ea7c8; 
-font-family:"Microsoft YaHei";
+font-family:"Microsoft YaHei",\5FAE\8F6F\96C5\9ED1,'SimHei',\9ED1\4F53,'LiHei Pro Medium', 'HanHei SC', 'STHeiti';
 } 
 img{
 	display:block;}
 html {
   -webkit-transform-origin: top left;
   transform-origin: top left;
-  font-family:"Microsoft YaHei"}
+  font-family:"Microsoft YaHei",\5FAE\8F6F\96C5\9ED1,'SimHei',\9ED1\4F53,'LiHei Pro Medium', 'HanHei SC', 'STHeiti';
+  overflow:hidden;}
 .clear{
   clear: both;
 }
@@ -52,76 +53,85 @@ body.phone{
 .phone .pH,.browser .bH{
 	display:none;
 	}
-.browser .centerFrame{
+.centerFrame{
 	width:1200px;
 	margin:auto;
 	position:relative;
 	}
-.browser .pathTitle{
+.phone .centerFrame{
+	width:750px;
+	}
+.pathTitle{
 	position:relative;
 	padding-top:50px;}
-.browser .pathTitle .titleCn{
+.phone .pathTitle{
+	padding-top:38px;}
+.pathTitle .titleCn{
 	text-align:center;
 	font-size:26px;
 	color:#342d14;
 	letter-spacing: 8px;
     text-indent: 8px;
 	}
-.browser .pathTitle .titleEn{
+.phone .pathTitle .titleCn{
+	font-size:34px;
+	letter-spacing: 20px;
+    text-indent: 20px;
+	}
+.pathTitle .titleEn{
 	text-align:center;
 	font-size:18px;
 	color:#c5c4bf;}
-.browser .pathTitle .left{
+.phone .pathTitle .titleEn{
+	font-size:28px;
+}
+.pathTitle .left{
 	position:absolute;
 	top:60px;
 	left:450px;
 	color:#5ebcff;}
-.browser .pathTitle .right{
+.phone .pathTitle .left{
+	top:54px;
+	left:150px;
+}
+.pathTitle .right{
 	position:absolute;
 	top:60px;
 	right:450px;
 	color:#5ebcff;}
-.phone .centerFrame{
-	width:750px;
-	margin:auto;
-	position:relative;
-	}
-.phone .pathTitle{
-	position:relative;
-	padding-top:38px;}
-.phone .pathTitle .titleCn{
-	text-align:center;
-	font-size:34px;
-	color:#342d14;
-	letter-spacing: 20px;
-    text-indent: 20px;
-	}
-.phone .pathTitle .titleEn{
-	text-align:center;
-	font-size:28px;
-	color:#c5c4bf;}
-.phone .pathTitle .left{
-	position:absolute;
-	top:54px;
-	left:150px;
-	color:#5ebcff;}
 .phone .pathTitle .right{
-	position:absolute;
 	top:54px;
 	right:150px;
-	color:#5ebcff;}
+}
 /*head*/
 .browser #head{
 	width:100%;
 	height:68px;
 	background-color:#fff;
+	position:absolute;
+	top:0px;
+	left:0px;
+	z-index:20;
+	box-shadow:0px 3px 3px rgba(0,0,0,0.1);
+	}
+.browser #head .white{
+	width:10px;
+	height:68px;
+	background-color:#fff;
+	position:absolute;
+	top:0px;}
+.browser #head .left{
+	left:-5px;}
+.browser #head .right{
+	right:-5px;
 	}
 .browser #head #headFrame{
 	width:1200px;
 	height:68px;
 	background-color:#fff;
 	margin:auto;
-	box-shadow:0px 3px 3px rgba(0,0,0,0.1);
+	position:relative;
+	z-index:10
 	}
 .browser #head .logo{
 	float:left;
@@ -157,7 +167,9 @@ body.phone{
 	box-shadow:0px 0px 50px rgba(0,0,0,0.3);
 	background-color:#fff;
 	z-index:4;
-	position:relative;
+	position:absolute;
+	top:0px;
+	left:0px;
 	}
 .phone #head #logo{
 	position:absolute;
@@ -171,37 +183,93 @@ body.phone{
 	font-size:34px;
 	}
 .phone #head #menuButton{
-	position:absolute;
-	top:50px;
-	left:573px;
-	color:#78acf1;
-	font-size:34px;
+	position: absolute;
+    top: 38px;
+    left: 558px;
+    color: #78acf1;
+    font-size: 63px;
+    cursor: pointer;
 	}
+/*wrap*/
+#IS{
+	width:100%;
+	position:relative;
+	overflow:hidden;
+	}
+#wrap{
+	width:100%;
+	position:absolute;
+	top:0px;
+	left:0px;}
+/*space*/
+#space{
+	width:100%;
+	height:68px;
+	}
+.phone #space{
+	height:132px;
+	}
+/*menu*/
+#menu{
+	width:100%;
+	background-color:#fff;
+	height:0px;
+	transition-timing-function: cubic-bezier(0.1, 0.57, 0.1, 1);
+  transition-duration: 1000ms;
+  overflow: hidden;
+	}
+#menu.open{
+	height:320px;}
+#menu .point{
+	width:380px;
+	height:80px;
+	line-height:80px;
+	text-indent:20px;
+	font-size: 30px;
+	margin:auto;
+	cursor:pointer;
+	}
+#menu .point.hl,#menu .point:hover{
+	background-color:#fafafa;
+	color:green;}
 /*banner*/
-.browser #banner{
+#banner{
 	width:100%;
 	height:467px;
 	position:relative;
 	overflow:hidden;}
-.browser #banner #roll{
+.phone #banner{
+	height:372px;
+}
+#banner #roll{
 	width:300%;
 	height:467px;
 	position:absolute;
 	top:0px;
 	left:0%;
-	transition-timing-function: "cubic-bezier(0.1, 0.57, 0.1, 1)";
-  transition-duration: 1000ms;}
-.browser #banner .point{
-	float:left;
-	width:33.33%;
+	transition-timing-function: cubic-bezier(0.1, 0.57, 0.1, 1);
+  transition-duration: 2000ms;}
+.phone #banner #roll{
+	height:372px;
+}
+#banner .point{
+	width:100%;
 	height:467px;
 	background-position:center;
-	background-repeat:no-repeat;}
-.browser #banner .pointCenter{
+	background-repeat:no-repeat;
+position: absolute;
+top:0px;
+left: 0%;
+transition-timing-function: cubic-bezier(0.1, 0.57, 0.1, 1);
+  transition-duration: 2000ms;}
+.phone #banner .point{
+	height:372px;
+	background-size:auto 372px;}
+#banner .pointCenter{
 	width:1200px;
 	margin:auto;
 	position:relative;}
-.browser #banner .whitePoint{
+#banner .whitePoint{
 	width:12px;
 	height:12px;
 	background-color:#fff;
@@ -209,17 +277,26 @@ body.phone{
 	float:left;
 	margin-right:32px;
 	border-radius:32px;}
-.browser #banner .whitePoint.hl{
+.phone #banner .whitePoint{
+	width:10px;
+	height:10px;
+	margin-right:25px;
+	border-radius:10px;}
+#banner .whitePoint.hl{
 	opacity:1;}
-.browser #banner .whitePoint.last{
+#banner .whitePoint.last{
 	margin-right:0px;
 	}
-.browser #banner #whiteCenterFrame{
+#banner #whiteCenterFrame{
 	margin:auto;
 	position:relative;
 	top:423px;
-	width:100px;}
-.browser #banner #downApp{
+	width:100px;
+	z-index: 5;}
+.phone #banner #whiteCenterFrame{
+	top:330px;
+	width:80px;}
+#banner #downApp{
 	width:205px;
 	height:44px;
 	background-color:#ffd550;
@@ -234,14 +311,26 @@ body.phone{
 	font-weight:bold;
 	cursor:pointer;
 	}
-.browser #banner #downApp:hover{
+.phone #banner #downApp{
+	width:163px;
+	height:36px;
+	line-height: 36px;
+	top: 227px;
+    left: 85px;
+	}
+#banner #downApp:hover{
 	color:#fff;
 	}
-.browser #banner #erCode{
+#banner #erCode{
 	position:absolute;
 	top: 151px;
     left: 581px;}
-.browser #banner #go{
+.phone #banner #erCode{
+	top: 120px;
+    left: 359px;
+	width: 97px;
+	height: 97px;}
+#banner #go{
 	width: 205px;
     height: 44px;
     background-color: #fff;
@@ -256,9 +345,17 @@ body.phone{
     text-align: left;
     text-indent: 32px;
 	}
-.browser #banner #go:hover{
+.phone #banner #go{
+	width: 161px;
+    height: 35px;
+    line-height: 35px;
+    top: 192px;
+    left: 498px;
+    text-indent: 12px;
+	}
+#banner #go:hover{
 	color:red;}
-.browser #banner .icon{
+#banner .icon{
 	    position: absolute;
     font-size: 17px;
     width: 34px;
@@ -271,131 +368,70 @@ body.phone{
     text-indent: 0px;
     text-align: center;
 	}
-.phone #banner{
-	width:100%;
-	height:372px;
-	position:relative;
-	overflow:hidden;}
-.phone #banner #roll{
-	width:300%;
-	height:372px;
-	position:absolute;
-	top:0px;
-	left:-200%;
-	transition-timing-function: "cubic-bezier(0.1, 0.57, 0.1, 1)";
-  transition-duration: 1000ms;}
-.phone #banner .point{
-	float:left;
-	width:33.33%;
-	height:372px;
-	background-position:center;
-	background-repeat:no-repeat;
-	background-size:auto 372px;}
-.phone #banner .pointCenter{
-	width:1200px;
-	margin:auto;
-	position:relative;}
-.phone #banner .whitePoint{
-	width:10px;
-	height:10px;
-	background-color:#fff;
-	opacity:0.3;
-	float:left;
-	margin-right:25px;
-	border-radius:10px;}
-.phone #banner .whitePoint.hl{
-	opacity:1;}
-.phone #banner .whitePoint.last{
-	margin-right:0px;
-	}
-.phone #banner #whiteCenterFrame{
-	margin:auto;
-	position:relative;
-	top:330px;
-	width:80px;}
-.phone #banner #downApp{
-	width:163px;
-	height:36px;
-	background-color:#ffd550;
-	border-radius:44px;
-	text-align:center;
-	line-height: 36px;
-	color:#4f3f0b;
-	font-size:20px;
-	position:absolute;
-	top: 227px;
-    left: 85px;
-	font-weight:bold;
-	cursor:pointer;
-	}
-.phone #banner #downApp:hover{
-	color:#fff;
-	}
-.phone #banner #erCode{
-	position:absolute;
-	top: 120px;
-    left: 359px;
-	width: 97px;
-	height: 97px;}
-.phone #banner #go{
-	width: 161px;
-    height: 35px;
-    background-color: #fff;
-    border-radius: 44px;
-    line-height: 35px;
-    color: #dc9847;
-    font-size: 18px;
-    position: absolute;
-    top: 192px;
-    left: 498px;
-    cursor: pointer;
-    text-align: left;
-    text-indent: 12px;
-	}
-.phone #banner #go:hover{
-	color:red;}
 .phone #banner .icon{
-	position: absolute;
     font-size: 15px;
     width: 30px;
     height: 30px;
-    border: 1px solid #dc9847;
-    border-radius: 34px;
     top: 3px;
     left: 123px;
     line-height: 27px;
-    text-indent: 0px;
-    text-align: center;
 	}
 /*project*/
-.browser #project{
+#project{
 	width:100%;
 	height:631px;
 	background-color:#fff}
-.browser #project #projectFrame{
+.phone #project{
+	height:auto;
+}
+#project #projectFrame{
 	width:100%;
 }
-.browser #project .point{
+.phone #project .centerFrame{
+	height:3265px;
+	padding-bottom:20px;}
+#project .point{
 	width:25%;
 	float:left;
 	margin-top:45px;
 	text-align:center;
 	position:relative;}
-.browser #project .cn{
+.phone #project .point{
+	width:100%;
+	float:none;}
+#project .cn{
 	font-size:18px;
 	color:#333333;
 	margin-top:17px;}
-.browser #project .en{
+.phone #project .cn{
+	font-size:34px;
+}
+#project .en{
 	font-size:18px;
 	color:#c5c4bf;
 	margin-top:9px;}
-.browser #project .bg{
+.phone #project .en{
+	font-size:28px;
+}
+#project .bg{
 	color: #eef7fc;
     font-size: 190px;
     text-indent: -18px;
     line-height: 148px;
-    margin-top: -23px;}
-.browser #project .icon{
+    margin-top: -23px;
+	transition-timing-function: cubic-bezier(0.1, 0.57, 0.1, 1);
+    transition-duration: 3000ms;
+	transform-origin: 50% 50%;
+	transform:scaleX(0);
+	}
+.phone #project .bg{
+    font-size: 355px;
+    line-height: 280px;
+}
+#project .bg.an{
+	transform:scaleX(1);
+	}
+#project .icon{
 	width: 104px;
     height: 104px;
 	line-height:98px;
@@ -405,68 +441,39 @@ body.phone{
     border: 3px solid #74c5e6;
     border-radius: 104px;
 	background-color:#fff;
+	transition-timing-function: cubic-bezier(0.1, 0.57, 0.1, 1);
+    transition-duration: 2000ms;
+	transform-origin: 50% 50%;
+	transform:scaleY(0);
 	}
-.browser #project .icon .iconfont{
-	font-size:45px;
-	color:#5ebcff;}
-.browser #project .dsc{
-	font-size:18px;
-	color:#5ebcff;
-	padding-top:75px;
-	cursor:pointer;}
-.browser #project .dsc:hover{
-	color:red;}
-.phone #project{
-	width:100%;
-	background-color:#fff}
-.phone #project #projectFrame{
-	width:100%;
-}
-.phone #project .centerFrame{
-	padding-bottom:20px;}
-.phone #project .point{
-	width:100%;
-	margin-top:45px;
-	text-align:center;
-	position:relative;}
-.phone #project .cn{
-	font-size:34px;
-	color:#333333;
-	margin-top:17px;}
-.phone #project .en{
-	font-size:28px;
-	color:#c5c4bf;
-	margin-top:9px;}
-.phone #project .bg{
-	color: #eef7fc;
-    font-size: 355px;
-    text-indent: -18px;
-    line-height: 280px;
-    margin-top: -23px;}
 .phone #project .icon{
 	width: 175px;
     height: 175px;
     line-height: 159px;
-    position: absolute;
     top: 74px;
     left: 294px;
-    border: 3px solid #74c5e6;
-    border-radius: 104px;
-    background-color: #fff;
 	}
+#project .icon.an{
+	transform:scaleY(1);
+	}
+#project .icon .iconfont{
+	font-size:45px;
+	color:#5ebcff;}
 .phone #project .icon .iconfont{
 	font-size: 120px;
-    color: #5ebcff;}
-.phone #project .dsc{
-	font-size:34px;
+}
+#project .dsc{
+	font-size:18px;
 	color:#5ebcff;
 	padding-top:75px;
-	cursor:pointer;
+	cursor:pointer;}
+.phone #project .dsc{
+	font-size:34px;
 }
-.phone #project .dsc:hover{
+#project .dsc:hover{
 	color:red;}
 /*analysis*/
-.browser #analysis{
+#analysis{
 	width:100%;
 	height:664px;
 	background-color:#cef4dd;
@@ -474,27 +481,69 @@ body.phone{
 	background-position:center;
 	background-repeat:no-repeat;
 	}
-.browser #analysis .pathTitle .iconfont{
+.phone #analysis{
+	height:426px;
+	background-size:auto 426px;
+	}
+#analysis .pathTitle .iconfont{
 	color:#45b170;}
-.browser #analysis .pathTitle .titleEn{
+#analysis .pathTitle .titleEn{
 	color:#fff;
 	}
-.browser #analysis #phoneA{
+#analysis #phoneA{
 	position:absolute;
 	top:185px;
 	left:180px;
-	z-index:3;}
-.browser #analysis #phoneB{
+	z-index:3;
+	transition-timing-function: cubic-bezier(0.1, 0.57, 0.1, 1);
+    transition-duration: 2000ms;
+	transform-origin: 50% 50%;
+	transform:translateY(100%);
+	}
+.phone #analysis #phoneA{
+	width:166px;
+	top:133px;
+	left:114px;
+}
+#analysis #phoneA.an{
+	transform:translateY(0);
+	}
+#analysis #phoneB{
 	position:absolute;
 	top:115px;
 	left:70px;
-	z-index:2;}
-.browser #analysis #phoneC{
+	z-index:2;
+	transition-timing-function: cubic-bezier(0.1, 0.57, 0.1, 1);
+    transition-duration: 2000ms;
+	transform-origin: 0% 100%;
+	transform:rotate(-50deg);}
+.phone #analysis #phoneB{
+	width:146px;
+	top:92px;
+	left:45px;
+}
+#analysis #phoneB.an{
+	transform:rotate(0deg);
+	}
+#analysis #phoneC{
 	position:absolute;
 	top:185px;
 	left:390px;
-	z-index:1;}
-.browser #analysis #dsc{
+	z-index:1;
+	transition-timing-function: cubic-bezier(0.1, 0.57, 0.1, 1);
+    transition-duration: 2000ms;
+	transform-origin: 100% 100%;
+	transform:rotate(150deg);
+	}
+.phone #analysis #phoneC{
+	width:146px;
+	top: 136px;
+    left: 218px;
+}
+#analysis #phoneC.an{
+	transform:rotate(0deg);
+	}
+#analysis #dsc{
 	width: 366px;
     background-color: #e6f9ef;
     border: 3px solid #fff;
@@ -503,61 +552,23 @@ body.phone{
     line-height: 32px;
     text-indent: 32px;
 	}
-.browser #analysis #dscFrame{
+.phone #analysis #dsc{
+	    width: 253px;
+    padding: 10px 20px;
+    font-size: 12px;
+	}
+#analysis #dscFrame{
 	padding:50px 44px;
 	background-color:#d8f6e5;
 	position:absolute;
 	top:226px;
 	left:658px;}
-.phone #analysis{
-	width:100%;
-	height:426px;
-	background-color:#cef4dd;
-	background-image:url(../images/bgG.jpg);
-	background-position:center;
-	background-repeat:no-repeat;
-	background-size:auto 426px;
-	}
-.phone #analysis .pathTitle .iconfont{
-	color:#45b170;}
-.phone #analysis .pathTitle .titleEn{
-	color:#fff;
-	}
-.phone #analysis #phoneA{
-	width:166px;
-	position:absolute;
-	top:133px;
-	left:114px;
-	z-index:3;}
-.phone #analysis #phoneB{
-	width:146px;
-	position:absolute;
-	top:92px;
-	left:45px;
-	z-index:2;}
-.phone #analysis #phoneC{
-	width:146px;
-	position:absolute;
-	top: 136px;
-    left: 218px;
-	z-index:1;}
-.phone #analysis #dsc{
-	    width: 253px;
-    background-color: #e6f9ef;
-    border: 3px solid #fff;
-    padding: 10px 20px;
-    font-size: 12px;
-    line-height: 32px;
-    text-indent: 32px;
-	}
 .phone #analysis #dscFrame{
 	padding:29px 33px;
-	background-color:#d8f6e5;
-	position:absolute;
 	top:144px;
 	left:424px;}
 /*team*/
-.browser #team{
+#team{
 	width:100%;
 	height:570px;
 	background-image:url(../images/bgT.jpg);
@@ -565,106 +576,135 @@ body.phone{
 	background-position:center;
 	background-repeat:no-repeat;
 	}
-.browser #team #dsc{
+.phone #team{
+	height:861px;
+	background-size:auto 861px;
+	}
+#team #dsc{
 	width:393px;
 	font-size: 16px;
     line-height: 32px;
     text-indent: 32px;
 	position:absolute;
 	top:179px;
-	left:58px;}
-.browser #team #pic{
-	position:absolute;
-	top:158px;
-	left:564px;
-	}
-.phone #team{
-	width:100%;
-	height:861px;
-	background-image:url(../images/bgT.jpg);
-	background-color:#fefefe;
-	background-position:center;
-	background-repeat:no-repeat;
-	background-size:auto 861px;
-	}
+	left:58px;
+	transition-timing-function: cubic-bezier(0.1, 0.57, 0.1, 1);
+    transition-duration: 2000ms;
+	transform-origin: 50% 50%;
+	transform:translate(-100%,200%)}
 .phone #team #dsc{
 	    width: 449px;
     font-size: 28px;
     line-height: 49px;
     text-indent: 54px;
-    position: absolute;
     top: 140px;
     left: 160px;
     letter-spacing: 4px;}
-.phone #team #pic{
+#team #dsc.an{
+	transform:translate(0,0);
+	}
+#team #pic{
 	position:absolute;
+	top:158px;
+	left:564px;
+	transition-timing-function: cubic-bezier(0.1, 0.57, 0.1, 1);
+    transition-duration: 2000ms;
+	transform-origin: 50% 50%;
+	transform:rotate(1500deg) scale(0,0);
+	}
+.phone #team #pic{
 	top:446px;
 	left:89px;
 	}
+#team #pic.an{
+	transform:rotate(0deg) scale(1,1);
+	}
 /*foot*/
-.browser #foot{
+#foot{
 	width:100%;
 	height:332px;
+	*height:400px;
 	background-color:#f4f7f6;
 	margin-top:20px;
 	border-top:1px solid #fff;}
-.browser #foot #first{
+.phone #foot{
+	height:650px;
+}
+#foot #first{
 	float:left;
 	width:664px;
 	height:226px;
 	border-right:1px solid #e4e8e8;
 	margin-top:21px;}
-.browser #foot #second{
+#foot #second{
 	float:left;
 	width:312px;
 	height:226px;
 	border-right:1px solid #e4e8e8;
 	margin-top:21px;
 	}
-.browser #foot #third{
+.phone #foot #second{
+	float:none;
+	width:100%;
+	border-right:0px;
+	margin-top:0px;
+	}
+#foot #third{
 	float:left;
 	width:224px;
+	*width:10px;
 	height:226px;
 	margin-top:21px;
 	}
-.browser #foot #first .point{
+#foot #first .point{
 	width:25%;
 	float:left;
 	text-align:center;}
-.browser #foot #first .icon{
+#foot #first .point a{
+	text-decoration: none;
+	color: #b0b0b0;
+}
+#foot #first .icon{
 	width:50px;
 	height:50px;
 	border:2px solid #dddddf;
 	border-radius:50px;
 	margin:auto;}
-.browser #foot #first .iconfont{
+#foot #first .iconfont{
 	line-height:46px;
 	color:#c2cfe2;
 	font-size:30px;}
-.browser #foot #first .name{
+#foot #first .name{
 	font-size:16px;
 	color:#838181;
 	margin-top:12px;
 	margin-bottom:20px;
 	}
-.browser #foot #first li{
+#foot #first li{
 	font-size:14px;
 	color:#b0b0b0;
 	margin-bottom:14px;
 	cursor:pointer;}
-.browser #foot #first li:hover{
+#foot #first li:hover{
 	text-decoration:underline;}
-.browser #foot #second #icon{
+#foot #second #icon{
 	display:block;
 	margin:auto;
 	}
-.browser #foot #second #name{
+.phone #foot #second #icon{
+	width:114px;
+	padding-top:59px;
+	}
+#foot #second #name{
 	text-align:center;
 	font-size:22px;
 	color:#c2cfe2;
 	margin-top:10px;
 	}
-.browser #foot #second .icon{
+.phone #foot #second #name{
+	font-size:34px;
+	}
+#foot #second .icon{
 	width:34px;
 	height:34px;
 	border-radius:34px;
@@ -673,13 +713,30 @@ body.phone{
 	text-align:center;
 	float:left;
 	margin-left:37px;
+	*margin-left:18px;
 	}
-.browser #foot #second .point{
+.phone #foot #second .icon{
+	width:63px;
+	height:63px;
+	margin-left:233px;
+	*margin-left:111px;
+	}
+.phone #foot #second .point2 .icon{
+	margin-left:164px;
+	*margin-left:82px;
+	}
+#foot #second .point{
 	margin-top:15px;}
-.browser #foot #second .iconfont{
+.phone #foot #second .point{
+	margin-top:45px;}
+#foot #second .iconfont{
 	line-height:30px;
 	}
-.browser #foot #second .test{
+.phone #foot #second .iconfont{
+	font-size:30px;
+	line-height:60px;
+	}
+#foot #second .test{
 	float:left;
 	margin-left:10px;
 	color:#b3aeae;
@@ -687,70 +744,348 @@ body.phone{
 	font-size: 20px;
     line-height: 34px;
 	}
-.browser #foot #third .point{
+.phone #foot #second .test{
+	font-size: 28px;
+    line-height: 60px;
+	}
+.phone #foot #second #downloadApp{
+	width: 586px;
+	height: 110px;
+	border-radius: 110px;
+	line-height: 110px;
+	text-align: center;
+	color: #fff;
+	background-color: #5ebcff;
+	display: block;
+	margin: auto;
+	margin-top: 58px;
+	font-size: 40px;
+	cursor: pointer;
+}
+#foot #third .point{
 	height:130px;
 	width:110px;
 	background-color:#ececec;
 	margin-left:60px;
 	margin-bottom:16px;
 	}
-.browser #foot #third .space{
+#foot #third .space{
 	width:100%;
 	height:4px;}
-.browser #foot #third .icon{
+#foot #third .icon{
 	border:3px solid #fff;
+	display: block;
 	margin:auto;
 	}
-.browser #foot #third .name{
+#foot #third .name{
 	text-align:center;
 	font-size:12px;
 	margin-top:9px;}
-.phone #foot{
-	width:100%;
-	height:518px;
-	background-color:#f4f7f6;
-	margin-top:20px;
-	border-top:1px solid #fff;}
-.phone #foot #second{
-	width:100%;
-	height:226px;
+.navFrame{
+	width:1200px;
+	margin:auto;}
+.phone .navFrame{
+	width:750px;
+	height:110px;
+	border-bottom:1px solid #dddddd;
+	background-color:#ffffff;
+	margin-top:24px;}
+.navFrame #crumbs{
+	float:left;
+	margin-top:35px;
+	font-size:14px;
 	}
-.phone #foot #second #icon{
-	width:114px;
-	display:block;
-	margin:auto;
-	padding-top:59px;
+.navFrame #crumbs a{
+	color:#1c8de5;
+	text-decoration:none;}
+.navFrame #nav{
+	float:right;
+	margin-top:25px;
 	}
-.phone #foot #second #name{
-	text-align:center;
+.phone .navFrame #nav{
+	width:700px;
+	margin-top:0px;
+	}
+.browser .navFrame #nav .point{
+	float:left;
+	width:187px;
+	height:50px;
+	color:#fff;
+	background-color:#5ebcff;
+	margin-right:10px;
+	border-radius:10px 10px 0px 0px;
+	cursor:pointer;}
+.phone .navFrame #nav .point{
+	width:33.33%;
+	float:left;
+	height:110px;
+	cursor:pointer;
+	}
+.phone .navFrame #nav .point.hl{
+	border-bottom:6px solid #5ebcff;
+	}
+.navFrame #nav .point.last{
+	margin-right:0px;}
+.navFrame #nav .point.hl{
+	background-color:#fff;
+	color:#3d3c3c;}
+.navFrame #nav .icon{
+	float:left;
+	margin-left:40px;
+	*margin-left:20px;
 	font-size:34px;
-	color:#c2cfe2;
-	margin-top:10px;
-	}
-.phone #foot #second .icon{
-	width:63px;
-	height:63px;
-	border-radius:34px;
-	border:1px solid #b3aeae;
-	color:#b3aeae;
-	text-align:center;
+	line-height:50px;}
+.navFrame #nav .text{
 	float:left;
-	margin-left:211px;
-	}
-.phone #foot #second .point2 .icon{
-	margin-left:164px;
-	}
-.phone #foot #second .point{
-	margin-top:45px;}
-.phone #foot #second .iconfont{
-	font-size:30px;
-	line-height:60px;
-	}
-.phone #foot #second .test{
-	float:left;
+	font-size:14px;
 	margin-left:10px;
-	color:#b3aeae;
-	font-family:Arial;
-	font-size: 28px;
-    line-height: 60px;
+	line-height:50px;
 	}
+.phone .navFrame #nav .text{
+	width:100%;
+	margin-left:0px;
+	text-align:center;
+	line-height:110px;
+	font-size:34px;
+	}
+.multiFrame{
+	height:1700px;
+	width:1200px;
+	margin:auto;
+	background-color:#fff;
+	position:relative;
+	overflow:hidden;
+	}
+.phone .multiFrame{
+	width:750px;
+	height:1400px;}
+.multiFrame .mulitiRoll{
+	position:absolute;
+	top:0px;
+	left:0%;
+	width:300%;
+	height:100%;
+	transition-timing-function: cubic-bezier(0.1, 0.57, 0.1, 1);
+  transition-duration: 1000ms;
+	}
+.multiFrame .mulitiPage{
+	width:33.33%;
+	float:left;
+	height:100%;
+	}
+.multiFrame .mulitiIS{
+	width:100%;
+	height: 1548px;
+	overflow:hidden;
+	position:relative;
+	}
+.phone .multiFrame .mulitiIS{
+	height:100%;
+	}
+.multiFrame .frame{
+	width:100%;
+	}
+.newsPoint{
+	width:1151px;
+	height:258px;
+	border-bottom:1px solid #f3f3f3;
+	margin:auto;
+	position:relative;}
+.phone .newsPoint{
+	width:700px;
+	height:226px;
+	cursor:pointer;
+	}
+.newsPoint #pic{
+	width:299px;
+	height:196px;
+	border:1px solid #f3f3f3;
+	padding:8px;
+	position:absolute;
+	left:39px;
+	top:31px;
+	}
+.phone .newsPoint #pic{
+	height:151px;
+	width:235px;
+	padding:0px;
+	border:0px;
+	top:36px;
+	left:0px;}
+.newsPoint #title{
+	font-size:16px;
+	color:#333333;
+	position:absolute;
+	top:40px;
+	left:355px;
+	}
+.phone .newsPoint #title{
+	font-size:34px;
+	top:38px;
+	left:263px;
+	width:419px;
+	}
+.newsPoint #form{
+	font-size:12px;
+	color:#b0b0b0;
+	position:absolute;
+	top:85px;
+	left:355px;
+	}
+.phone .newsPoint #form{
+	font-size:28px;
+	top:155px;
+	left:270px;
+	}
+.newsPoint #date{
+	font-size:12px;
+	color:#b0b0b0;
+	position:absolute;
+	top:85px;
+	right:52px;
+	}
+.phone .newsPoint #date{
+	font-size:28px;
+	top:157px;
+	}
+.newsPoint #dsc{
+	width:742px;
+	font-size:14px;
+	color:#838181;
+	position:absolute;
+	top:135px;
+	left:355px;
+	line-height: 28px;
+	}
+.newsPoint #go{
+	height:22px;
+	width:51px;
+	background-color:#5ebcff;
+	color:#fff;
+	text-align:center;
+	line-height:22px;
+	display: inline-block;
+	border-radius:5px;
+	font-size:12px;
+	cursor:pointer;
+	margin-left: 10px;
+	}
+.changePage{
+	margin:auto;
+	margin-top:45px;}
+.changePage .point,.changePage a{
+	height:28px;
+	border:1px solid #d5d4d4;
+	margin-right:15px;
+	*margin-right:7px;
+	float:left;
+	line-height:26px;
+	text-align:center;
+	font-size:14px;
+	color: #333;
+	text-decoration:none; 
+	padding-left: 10px;
+	padding-right: 10px;
+	}
+.changePage .point.pre,.changePage .point.next{
+	width:83px;
+	cursor:pointer;
+	}
+.changePage .point.num{
+	width:28px;
+	cursor:pointer;
+	}
+.changePage .point.num.hl,.changePage a.current{
+	background-color:#72c1f8;
+	color:#fff;
+	border:1px solid #72c1f8;
+	}
+.changePage .point.input{
+	width:53px;
+	}
+.changePage .point.button{
+	width:36px;
+	background-color:#72c1f8;
+	color:#fff;
+	border:1px solid #72c1f8;
+	margin-right:0px;
+	cursor:pointer;
+	}
+#newsDetail_page #frame{
+	width: 1200px;
+	background-color: #fff;
+	margin: auto;
+	margin-top: 25px;
+	padding-bottom: 75px;
+}
+.phone #newsDetail_page #frame{
+	width:750px;
+	margin-top: 20px;
+}
+#newsDetail_page #title{
+	font-size: 18px;
+	text-align: center;
+	color: #333;
+	padding-top: 45px;
+}
+.phone #newsDetail_page #title{
+	font-size: 46px;
+	width: 700px;
+	margin: auto;
+	text-align: left;
+	padding-top: 50px;
+}
+#newsDetail_page #subTitle{
+	font-size: 12px;
+	color: #b0b0b0;
+	text-align: center;
+	margin-top: 26px;
+}
+.phone #newsDetail_page #subTitle{
+	font-size: 24px;
+	width: 700px;
+	margin: auto;
+	text-align: left;
+	margin-top: 45px;
+}
+#newsDetail_page img{
+	display: block;
+	margin: auto;
+	margin-top: 45px;
+	margin-bottom: 60px;
+	width: 600px;
+}
+.phone #newsDetail_page img{
+	width: 700px;
+}
+#newsDetail_page .text{
+	font-size: 14px;
+    width: 1005px;
+    margin: auto;
+    line-height: 36px;
+    text-indent: 28px;
+}
+.phone #newsDetail_page .text{
+	width: 700px;
+	font-size: 34px;
+	line-height: 65px;
+	text-indent: 68px;
+}
+.phone #backButton{
+	width: 356px;
+	height: 110px;
+	background-color: #9ed1f6;
+	color: #fff;
+	text-align: center;
+	line-height: 110px;
+	font-size: 34px;
+	display: block;
+	margin: auto;
+	border-radius: 20px;
+	margin-top: 88px;
+	text-indent: -32px;
+	cursor: pointer;
+}
+.phone #backButton span{
+	font-size: 43px;
+}

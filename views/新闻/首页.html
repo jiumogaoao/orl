@@ -1,0 +1,53 @@
+<?php $this->load->view('头部.html');?>
+        <div id="news_page">
+            <div class="navFrame">
+                <div id="crumbs" class="pH">你现在的位置：<a href="/">首页</a>>新闻动态</div>
+                <div id="nav">
+                    <div class="point" num="1">
+                        <div class="icon iconfont pH">&#xe636;</div>
+                        <div class="text">媒体报道</div>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="point" num="2">
+                        <div class="icon iconfont pH">&#xe637;</div>
+                        <div class="text">公司新闻</div>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="point last" num="3">
+                        <div class="icon iconfont pH">&#xe638;</div>
+                        <div class="text">行业新闻</div>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <div class="clear"></div>
+            </div>
+            <div class="multiFrame">
+                <div class="mulitiRoll">
+                    <div class="mulitiPage">
+                        <div class="mulitiIS">
+                            <div class="frame">
+                                <?php foreach($新闻列表 as $新闻){ ?>
+                                <div class="newsPoint" href="/新闻/详情?新闻编号=<?=$新闻['新闻编号']?>">
+                                    <img srcL="<?=$新闻['图片']?>" id="pic" lazyload="0"/>
+                                    <div id="title"><?=$新闻['标题']?></div>
+                                    <div id="form"><?=$新闻['来源']?></div>
+                                    <div id="date"><?=date("Y-m-d",strtotime($新闻['添加时间']))?></div>
+                                    <div id="dsc" class="pH"><?=mb_substr(strip_tags($新闻['内容']), 0, 150, 'utf-8')?>...<button type="button" id="go" class="pH" >详细></button></div>
+                                </div>
+                                <?php } ?>
+                            </div>
+                        </div>
+                        <div class="changePage pH">
+                            <?=$分页?>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+        </div>
+<script type="text/javascript">
+    var toPage=<?=$分类编号?>;/*新闻类型*/
+    var fenye=<?=$当前页?>;/*新闻类型*/
+</script>
+<?php $this->load->view('尾部.html');?>
