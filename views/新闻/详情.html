@@ -1,0 +1,17 @@
+<?php $this->load->view('头部.html');?>
+        <div id="newsDetail_page">
+            <div class="navFrame pH">
+                <div id="crumbs" class="pH">你现在的位置：<a href="/">首页</a>>新闻动态</div>
+                <div class="clear"></div>
+            </div>
+            <div id="frame">
+                <div id="title"><?=$标题?></div>
+                <div id="subTitle"><?=date('Y-m-d H:i',strtotime($添加时间));?>｜来源：<?=$来源 ? $来源: '中钛新'?></div>
+                <div class="text">
+                    <?=$内容?>
+                </div>
+                <button id="backButton" class="bH"><span class="iconfont">&#xe639;</span>返回新闻列表页</button>
+            </div>
+        </div>
+
+<?php $this->load->view('尾部.html');?>

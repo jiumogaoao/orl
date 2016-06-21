@@ -1,4 +1,10 @@
 /********************通用**********************/
+var readFn={}
+    $(document).ready(function(){
+        $.each(readFn,function(index,fn){
+            fn();
+        });
+    });
 /*是否IE*/
 function isIE(){
 	    var userAgent = navigator.userAgent; //取得浏览器的userAgent字符串
@@ -26,6 +32,7 @@ return false
 return true  
 }  
 }
+var is_mobile=is_mobile();
 /*导航*/
     $("#head button").unbind("click").bind("click",function(){
         window.location.href=$(this).attr("href");
@@ -36,7 +43,7 @@ $("[lazyload='0']").each(function(){
 });
 /*下载app*/
 $("#foot #second #downloadApp").unbind("click").bind("click",function(){
-	window.location.href="http://wx.zoteri.net/用户/软件下载";
+	window.open("http://wx.zoteri.net/用户/软件下载");
 });
 /********************自适应**********************/
 var myScroll={
@@ -50,7 +57,7 @@ $("[animate='false']").each(function(){
 			 $(this).addClass("an");
 			 }
 		 });
-myScroll = new IScroll('#IS', { probeType: 3, mouseWheel: true ,scrollbars: true,click: true});
+myScroll = new IScroll('#IS', { probeType: 3, mouseWheel: !is_mobile ,scrollbars: !is_mobile,click: true,bounce:is_mobile});
 $("img").on("load",function(){
 	myScroll.refresh();
 });
@@ -72,7 +79,7 @@ scrollFn.an=function(s){
 /*自适应处理*/
     function resize(){
 		var showSize = 1;
-		if(is_mobile()){
+		if(is_mobile){
 			showSize = $(window).width()/750;
 			$("html,body").width(750);
 			$("body").addClass("phone");
@@ -110,7 +117,7 @@ scrollFn.an=function(s){
 			}
     }
     /*先执行一次*/
-    resize();
+    readFn.resize=resize;
     /*屏幕有变动的时候再执行*/
     $(window).on("resize",resize);
 /********************menu**********************/
@@ -139,18 +146,24 @@ $(".browser #head button#index").addClass("hl");
                     '<button id="downApp">下载app</button>'+
                 '</div>'+
             '</div>',
-            '<div class="point" style="background-image:url(/community/images/banner1.jpg); background-color:#61cd80;">'+
+            '<div class="point" style="background-image:url(/community/images/banner1.jpg); background-color:#78be8c;">'+
                 '<div class="pointCenter">'+
-                    '<img src="/community/images/ercode.jpg" id="erCode"/>'+
+                    '<img src="/community/images/ercode3.jpg" id="erCode"/>'+
                 '</div>'+
             '</div>',
-            '<div class="point" style="background-image:url(/community/images/banner2.jpg); background-color:#f8b354;">'+
+            '<div class="point" style="background-image:url(/community/images/banner2.jpg); background-color:#ea5671;">'+
                 '<div class="pointCenter">'+
                     '<button id="go">查看合作社区<div class="icon">GO</div></button>'+
                 '</div>'+
             '</div>'
 	];
 	var centerPoint=$(bannerData[0]).css("left","0%").attr("state","now").appendTo("#index_page #banner");
+	centerPoint.find("#downApp").unbind("click").bind("click",function(){
+		window.open("http://wx.zoteri.net/用户/软件下载");
+	})
+	centerPoint.find("#go").unbind("click").bind("click",function(){
+		window.location.href="http://sq.zoteri.net/";
+	})
 	function bannerLeft(){
 	bannerLock=true;
 	bannerclock=bannerclock%3;
@@ -158,6 +171,12 @@ $(".browser #head button#index").addClass("hl");
 		bannerclock=3+bannerclock;
 	}
 	var newPoint=$(bannerData[bannerclock]).css("left","100%").attr("state","next").appendTo("#index_page #banner");
+	newPoint.find("#downApp").unbind("click").bind("click",function(){
+		window.open("http://wx.zoteri.net/用户/软件下载");
+	})
+	newPoint.find("#go").unbind("click").bind("click",function(){
+		window.location.href="http://sq.zoteri.net/";
+	})
 	var importDelay=setTimeout(function(){
 	$("#index_page #banner [state='now']").css("left","-100%");
 	$("#index_page #banner [state='next']").css("left","0%");	
@@ -177,6 +196,12 @@ $(".browser #head button#index").addClass("hl");
 		bannerclock=3+bannerclock;
 	}
 	var newPoint=$(bannerData[bannerclock]).css("left","-100%").attr("state","pre").appendTo("#index_page #banner");
+	newPoint.find("#downApp").unbind("click").bind("click",function(){
+		window.location.href="http://wx.zoteri.net/用户/软件下载";
+	})
+	newPoint.find("#go").unbind("click").bind("click",function(){
+		window.location.href="http://sq.zoteri.net/";
+	})
 	var importDelay=setTimeout(function(){
 	$("#index_page #banner [state='now']").css("left","100%");
 	$("#index_page #banner [state='pre']").css("left","0%");	
@@ -231,41 +256,39 @@ $(".browser #head button#index").addClass("hl");
 return false;
 }
 $(".browser #head button#news").addClass("hl");
-if(!toPage){
-	toPage=1
-}
-$(".browser .navFrame #nav .point").eq(toPage-1).addClass("hl");
-$(".changePage").each(function(){
-	$(this).width((83+15)*2+(28+15)*$(this).find(".point.num").length+(53+15)+36);
-	});
 $("#nav .point").unbind("click").bind("click",function(){
-	window.location.href="/新闻/首页?分类编号="+Number($(this).attr("num"));
+	$(".multiFrame .mulitiRoll").css("left","-"+(Number($(this).attr("num"))%3)+"00%");
+	$("#nav .point").removeClass("hl");
+	$(this).addClass("hl");
+	$(".multiFrame .mulitiPage").removeClass("now");
+	$(".multiFrame .mulitiPage[num='"+$(this).attr("num")+"']").addClass("now");
 	});
-$(".newsPoint").unbind("click").bind("click",function(){
-	if($(".phone").length){
-		window.location.href=$(this).attr("href");
-	}
-});
-$(".newsPoint #go").unbind("click").bind("click",function(){
-	window.location.href=$(this).parents(".newsPoint").attr("href");
-})
 /*手机版顶部刷新*/
 var reflashLock=0;
 function pageReflash(){
-	var page=$(".mulitiPage.now .frame");/*要更新的地方*/
+	var page=Number($(".mulitiPage.now").attr("num"));/*要更新的地方*/
 	/*更新代码*/
-	window.location.href="/新闻/首页?分类编号="+toPage+"&位置="+(fenye+1);
+	$(".mulitiPage.now").attr("src","/新闻/列表?分类编号="+page+"&位置="+(nowPage[page-1]+1));
 	/*更新后运行*/
 	reflashLock=0;
 }
 if(!(isIE()&&isIE()<9)){/*非ie9以下*/
 scrollFn.news=function(s){
+	if(is_mobile){
 	if($(".phone").length&&s.y>100){
 		if(!reflashLock){
 			reflashLock=1;
 			pageReflash();
 		}
+	}	
+}else{
+	if($(".phone").length&&s.y==0){
+		if(!reflashLock){
+			reflashLock=1;
+			pageReflash();
+		}
 	}
+}
 }
 }else{/*ie9以下*/
 	$("#IS").on("scroll",function(e){
@@ -277,7 +300,6 @@ scrollFn.news=function(s){
 		}
 	})
 }
-
 })();
 /********************newsDetail_page**********************/
 (function(){
@@ -289,3 +311,28 @@ $("#backButton").unbind("click").bind("click",function(){
 	window.location.href="/新闻/首页";
 });
 })();
+/****兼容****/
+var android =function(){
+      var u = window.navigator.userAgent;
+      var num ;
+
+        //移动端
+        if(u.indexOf('Android') > -1 || u.indexOf('Linux') > -1){
+          //android
+          num = u.substr(u.indexOf('Android') + 8, 3);
+          return num;
+        }else{
+          return false;
+        }
+    }
+
+if(android()){
+  var v=android().split(".");
+  if(Number(v[0])<=4&&Number(v[1])<4){
+        $("body").append('<style>'+
+'.phone #newsDetail_page .text p{ '+
+'background-color:#fff;'+
+'} '+
+    '</style>')
+  }
+}
